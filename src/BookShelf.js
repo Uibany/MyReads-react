@@ -13,7 +13,7 @@ class BookShelf extends Component {
         const { booksOnShelf, onMoveBook } = this.props;
 
         const shelfValues = ["currentlyReading", "wantToRead", "read"];
-        const shelfNames = ["Currently Reading", "Want To Read", "Read"];
+        const shelfNames = ["I'm currently reading...", "I want to read...", "I have read..."];
 
         return (
             <div>
