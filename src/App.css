@@ -47,6 +47,7 @@ body, .app {
   display: flex;
   justify-content: center;
   font-family: 'Playfair Display', serif;
+  padding-top: 10px;
 }
 
 .bookshelf-books {
@@ -63,7 +64,7 @@ body, .app {
   display: block;
   width: 50px;
   height: 50px;
-  background:rgb(202, 155, 52);;
+  background:black;
   background-image: url('./icons/add.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -71,10 +72,15 @@ body, .app {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   font-size: 0px;
   outline: 0;
+  transition: opacity, 0.2s; 
 }
 
-.open-search button:hover {
-  background-color:#4f23c5;
+.open-search:hover {
+  background:rgb(202, 155, 52);
+  background-image: url('./icons/add.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
 }
 
 
@@ -181,7 +187,7 @@ button:active {
   width: 90px;
   height: 30px;
   border-radius: 5px;
-  background: #4f23c5;
+  background: rgb(202, 155, 52);
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: right;
@@ -242,7 +248,7 @@ button:active {
 .header-title {
   color: white;
   position: absolute;
-  top: 20%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Dancing Script', cursive;
@@ -275,7 +281,8 @@ button:active {
 }
 
 .header-button:hover {
-  background-color: rgba(255, 255, 255, 0.9); /* Green */
-  color: rgb(202, 155, 52);
+  background-color: black; 
+  color: white;
   text-decoration: none;
+  border: 1px solid black;
 }
