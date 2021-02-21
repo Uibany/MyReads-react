@@ -30,12 +30,14 @@ class BooksApp extends Component {
     }
 
     render() {
-        const { books,searchResult } = this.state;
+        const { books, searchResult } = this.state;
 
         return (
             <div className="app">
                 <Route exact path='/search' render={() => (
-                    <Search allBooks = {searchResult}/>
+                    <Search 
+                        allBooks = {searchResult}
+                        onMoveBook={this.moveBook}/>
                 )} />
                 <Route exact path='/' render={() => (
                     <div >
