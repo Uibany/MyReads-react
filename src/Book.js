@@ -18,13 +18,14 @@ class Book extends Component {
             <li key = {key}>
                 <div className="book card">
                     <div className="book-top"> 
-                        <img className="book-cover" src = {book.imageLinks.thumbnail}/>    
+                        <img className="book-cover" src = {book.imageLinks && book.imageLinks.thumbnail}/>    
                     </div>
                     <div className="book-title">{book.title}</div>
-                    <div className="book-authors">{book.authors}</div>
+                    <div className="book-authors">{book.authors && book.authors.join(', ')}</div>
                     <div className="book-shelf-changer">
                         <p>Move to...</p>
                         <select value={book.shelf} onChange={(e) => this.updateBook(e.target.value)}>
+                            <option disabled selected value> - select an option - </option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>
                             <option value="read">Read</option>

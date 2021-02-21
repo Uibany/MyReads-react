@@ -98,7 +98,7 @@ body, .app {
 
 .search-books-input-wrapper {
   flex: 1;
-  background: #e9e;
+  background: rgb(134, 134, 134);
 }
 
 .search-books-bar input {
@@ -114,8 +114,9 @@ body, .app {
   top: 20px;
   left: 15px;
   width: 50px;
-  height: 53px;
+  height: 60px;
   background-image: url('./icons/arrow-back.svg');
+  background-color:white;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 28px;
@@ -130,7 +131,7 @@ button:active {
 }
 
 .search-books-results {
-  padding: 80px 10px 20px;
+  padding: 20px 10px 20px;
 }
 
 /* books grid */
@@ -151,8 +152,8 @@ button:active {
 
 .book {
     box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
-    width: 150px;
-    min-height: 310px;
+    width: 160px;
+    min-height: 320px;
     height: fit-content;
     display: flex;
     padding: 10px;
@@ -207,7 +208,7 @@ button:active {
   display: flex;
 }
 .book:hover .book-cover{
-    opacity: 0.5;
+    opacity: 0.3;
     transition: opacity, 0.2s;
   }
 
@@ -220,8 +221,8 @@ button:active {
 
 /* book cover */
 .book-cover {
-  width: 130px;
-  min-height: 180px;
+  width: 140px;
+  height: 200px;
 }
 
 .book-cover-title {
@@ -286,4 +287,25 @@ button:active {
   color: rgb(202, 155, 52);
   text-decoration: none;
   border: 1px solid white;
+}
+
+.search-terms-collection{
+  position: relative;
+  margin-top: 80px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: block;
+}
+
+.search-terms-list{
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.search-term{
+  background-color: rgb(202, 155, 52); 
+  color: white;
+  padding: 4px 8px;
+  margin: 10px;
+  border-radius: 4px;
 }
