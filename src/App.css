@@ -182,24 +182,25 @@ button:active {
 
 .book-shelf-changer {
   align-self: center;
+  justify-content: center;
   position: absolute;
   top: 90px;
   width: 90px;
   height: 30px;
-  border-radius: 5px;
-  background: rgb(202, 155, 52);
-  background-image: url('./icons/arrow-drop-down.svg');
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 20px;
+  background: black;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.2);
   display: none;
+  transition-duration: 0.4s;
 }
 .book-shelf-changer p {
   padding: 5px;
   font-size: 15px;
   color: white;
   position: absolute;
+}
+
+.book-shelf-changer:hover{
+  background: rgb(202, 155, 52);
 }
 
 .book:hover .book-shelf-changer{
@@ -281,8 +282,8 @@ button:active {
 }
 
 .header-button:hover {
-  background-color: black; 
-  color: white;
+  background-color: white; 
+  color: rgb(202, 155, 52);
   text-decoration: none;
-  border: 1px solid black;
+  border: 1px solid white;
 }
