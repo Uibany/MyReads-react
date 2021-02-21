@@ -18,13 +18,16 @@ class SearchTerms extends Component{
     
     render(){
         return (
-            <li className = "search-terms-list">
-                {searchTerms.map(term=>{
-                    return(
-                        <ol className = "search-term" >{term}</ol>
-                    )
-                })}
-            </li>
+            <div className = "search-terms-collection">
+                <button className = "search-terms-toggle">Show suggested search terms</button>
+                <li className = "search-terms-list">
+                    {searchTerms.map(term=>{
+                        return(
+                            <ol className = "search-term" >{term}</ol>
+                        )
+                    })}
+                </li>
+            </div>
 
         )
     }

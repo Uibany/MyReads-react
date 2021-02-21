@@ -57,9 +57,8 @@ class Search extends Component {
                         />
                     </div>
                 </div>
-                <div className="search-terms-collection">
-                    <SearchTerms/>
-                </div>
+
+                <SearchTerms/>
                 
                 <div className="search-books-results">
                     <ol className="books-grid">

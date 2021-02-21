@@ -294,7 +294,17 @@ button:active {
   margin-top: 80px;
   margin-left: 20px;
   margin-right: 20px;
-  display: block;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+}
+
+.search-terms-toggle{
+  margin: 20px auto;
+  width: max-content;
+  padding: 10px;
+  color:rgb(202, 155, 52);
+  border:0;
 }
 
 .search-terms-list{
@@ -303,8 +313,8 @@ button:active {
 }
 
 .search-term{
-  background-color: rgb(202, 155, 52); 
-  color: white;
+  outline: 0.1em auto rgba(202, 154, 52, 0.555);
+  color: gray;
   padding: 4px 8px;
   margin: 10px;
   border-radius: 4px;
