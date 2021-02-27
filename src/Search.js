@@ -18,7 +18,7 @@ class Search extends Component {
         }))
     }
 
-    search = (query)=>{
+    search = (query) =>{
         if(query!=''){
             BooksAPI.search(query).then(books=>{
                 if(books.error){

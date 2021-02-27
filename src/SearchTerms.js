@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const searchTerms = [
+const allSearchTerms = [
     'Android', 'Art', 'Artificial Intelligence', 'Astronomy', 'Austen', 
     'Baseball', 'Basketball', 'Bhagat', 'Biography', 'Brief', 'Business', 
     'Camus', 'Cervantes', 'Christie', 'Classics', 'Comics', 'Cook', 'Cricket', 'Cycling', 
@@ -15,11 +15,39 @@ const searchTerms = [
 ]
 
 class SearchTerms extends Component{
+    state = {
+        showSearchTerms: -1,
+        searchTerms:[],
+        activeTermIndex: 0,
+        toggleButtonText: "Show suggested search terms",
+        toggleButtonStyle: {color: "white", backgroundColor: "#ca9b34"}
+    }
+
+    toggleSearchTerms = () =>{
+        this.state.showSearchTerms *= (-1);
+        console.log(this.state.showSearchTerms);
+        this.state.showSearchTerms == 1? 
+            this.setState({
+                searchTerms:allSearchTerms,
+                toggleButtonText: "Hide suggested search terms", 
+                toggleButtonStyle: {color: "#ca9b34", backgroundColor: "#f5f3f3"}
+            })
+            :this.setState({
+                searchTerms:[],
+                toggleButtonText: "Show suggested search terms", 
+                toggleButtonStyle: {color: "white", backgroundColor: "#ca9b34"}
+            });
+    }
+        
     
     render(){
+        const{showSearchTerms, searchTerms, activeTermIndex, toggleButtonText, toggleButtonStyle} = this.state;
         return (
             <div className = "search-terms-collection">
-                <button className = "search-terms-toggle">Show suggested search terms</button>
+                <button className= "search-terms-toggle" onClick={this.toggleSearchTerms} style={toggleButtonStyle}>
+                    {toggleButtonText}
+                </button>
+
                 <li className = "search-terms-list">
                     {searchTerms.map(term=>{
                         return(

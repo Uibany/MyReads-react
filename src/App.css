@@ -305,6 +305,12 @@ button:active {
   padding: 10px;
   color:rgb(202, 155, 52);
   border:0;
+  transition-duration: 0.4s;
+}
+
+.search-terms-toggle:hover{
+  color:white;
+  background-color: rgb(202, 155, 52);
 }
 
 .search-terms-list{
