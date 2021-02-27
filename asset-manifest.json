@@ -1,10 +1,10 @@
 {
   "main.css": "/myreads-app/static/css/main.f83cea69.chunk.css",
-  "main.js": "/myreads-app/static/js/main.821d3c5c.chunk.js",
-  "main.js.map": "/myreads-app/static/js/main.821d3c5c.chunk.js.map",
+  "main.js": "/myreads-app/static/js/main.9f08d8f0.chunk.js",
+  "main.js.map": "/myreads-app/static/js/main.9f08d8f0.chunk.js.map",
   "static/css/1.b8b0e07d.chunk.css": "/myreads-app/static/css/1.b8b0e07d.chunk.css",
-  "static/js/1.faeebea9.chunk.js": "/myreads-app/static/js/1.faeebea9.chunk.js",
-  "static/js/1.faeebea9.chunk.js.map": "/myreads-app/static/js/1.faeebea9.chunk.js.map",
+  "static/js/1.c24d30b1.chunk.js": "/myreads-app/static/js/1.c24d30b1.chunk.js",
+  "static/js/1.c24d30b1.chunk.js.map": "/myreads-app/static/js/1.c24d30b1.chunk.js.map",
   "runtime~main.js": "/myreads-app/static/js/runtime~main.1500c43a.js",
   "runtime~main.js.map": "/myreads-app/static/js/runtime~main.1500c43a.js.map",
   "static/media/background.jpeg": "/myreads-app/static/media/background.f89ff9d7.jpeg",
@@ -12,6 +12,6 @@
   "static/css/main.f83cea69.chunk.css.map": "/myreads-app/static/css/main.f83cea69.chunk.css.map",
   "static/css/1.b8b0e07d.chunk.css.map": "/myreads-app/static/css/1.b8b0e07d.chunk.css.map",
   "index.html": "/myreads-app/index.html",
-  "precache-manifest.82d0f069a1ce73f43d5faf4fc774a915.js": "/myreads-app/precache-manifest.82d0f069a1ce73f43d5faf4fc774a915.js",
+  "precache-manifest.82054c94e5ef4b8cff4a04570f7ef150.js": "/myreads-app/precache-manifest.82054c94e5ef4b8cff4a04570f7ef150.js",
   "service-worker.js": "/myreads-app/service-worker.js"
 }
