@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/MyReads-react/static/media/background.f89ff9d7.jpeg"
   },
   {
-    "revision": "bb9363b86b02777d23523851826414e0",
-    "url": "/MyReads-react/static/media/add.bb9363b8.svg"
-  },
-  {
     "revision": "3687aa988bec28f17ae39153db1646c3",
     "url": "/MyReads-react/static/media/arrow-back.3687aa98.svg"
+  },
+  {
+    "revision": "bb9363b86b02777d23523851826414e0",
+    "url": "/MyReads-react/static/media/add.bb9363b8.svg"
   },
   {
     "revision": "c103155b4251875710707b90c2f0c8e4",
