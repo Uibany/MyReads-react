@@ -8,10 +8,10 @@
   "runtime~main.js": "/myreads-app/static/js/runtime~main.1500c43a.js",
   "runtime~main.js.map": "/myreads-app/static/js/runtime~main.1500c43a.js.map",
   "static/media/background.jpeg": "/myreads-app/static/media/background.f89ff9d7.jpeg",
-  "static/media/App.css": "/myreads-app/static/media/arrow-back.3687aa98.svg",
+  "static/media/App.css": "/myreads-app/static/media/add.bb9363b8.svg",
   "static/css/main.f83cea69.chunk.css.map": "/myreads-app/static/css/main.f83cea69.chunk.css.map",
   "static/css/1.b8b0e07d.chunk.css.map": "/myreads-app/static/css/1.b8b0e07d.chunk.css.map",
   "index.html": "/myreads-app/index.html",
-  "precache-manifest.af8123d94123b5059068971be7b8e94c.js": "/myreads-app/precache-manifest.af8123d94123b5059068971be7b8e94c.js",
+  "precache-manifest.82d0f069a1ce73f43d5faf4fc774a915.js": "/myreads-app/precache-manifest.82d0f069a1ce73f43d5faf4fc774a915.js",
   "service-worker.js": "/myreads-app/service-worker.js"
 }
