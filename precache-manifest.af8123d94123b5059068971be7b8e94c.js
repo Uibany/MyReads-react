@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/myreads-app/static/media/background.f89ff9d7.jpeg"
   },
   {
-    "revision": "3687aa988bec28f17ae39153db1646c3",
-    "url": "/myreads-app/static/media/arrow-back.3687aa98.svg"
-  },
-  {
     "revision": "bb9363b86b02777d23523851826414e0",
     "url": "/myreads-app/static/media/add.bb9363b8.svg"
+  },
+  {
+    "revision": "3687aa988bec28f17ae39153db1646c3",
+    "url": "/myreads-app/static/media/arrow-back.3687aa98.svg"
   },
   {
     "revision": "b6c4aff257ff8225284e7d812b0fc678",
