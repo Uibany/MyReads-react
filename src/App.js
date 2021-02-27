@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import {HashRouter, Route, Link } from 'react-router-dom';
 import * as BooksAPI from './BooksAPI';
 import BookShelf from './BookShelf';
 import Header from './Header';
@@ -33,6 +33,7 @@ class BooksApp extends Component {
         const { books, searchResult } = this.state;
 
         return (
+            <HashRouter basename={process.env.PUBLIC_URL}>
             <div className="app">
                 <Route exact path='/search' render={() => (
                     <Search 
@@ -52,6 +53,7 @@ class BooksApp extends Component {
                     </div>
                 )} />
             </div>
+            </HashRouter>
         )
     }
 }
