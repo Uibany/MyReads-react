@@ -324,4 +324,9 @@ button:active {
   padding: 4px 8px;
   margin: 10px;
   border-radius: 4px;
+  transition-duration: 0.4s;
+}
+
+.search-term:hover{
+  cursor: pointer;
 }
