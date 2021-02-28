@@ -4,12 +4,14 @@ import * as BooksAPI from './BooksAPI';
 import BookShelf from './BookShelf';
 import Header from './Header';
 import Search from './Search';
+import BookDetails from './BookDetails';
 import './App.css'
 
 class BooksApp extends Component {
     state = {
         books: [],
-        searchResult : []
+        searchResult : [],
+        showBookDetails : false
     }
 
     moveBook = (book, shelf) => {
@@ -23,14 +25,21 @@ class BooksApp extends Component {
         }
     }
 
+    toggleBookDetails = () => {
+        this.setState({
+          showBookDetails: !this.state.showBookDetails
+        })
+        console.log(this.state.showBookDetails);
+    }
+
     componentDidMount() {
         BooksAPI.getAll().then((books) => {
-            this.setState({ books: books, searchResult: books })
+            this.setState({ books: books, searchResult: books, showBookDetails : false })
         })
     }
 
     render() {
-        const { books, searchResult } = this.state;
+        const { books, searchResult, showBookDetails } = this.state;
 
         return (
             <HashRouter basename={process.env.PUBLIC_URL}>
@@ -42,11 +51,13 @@ class BooksApp extends Component {
                 )} />
                 <Route exact path='/' render={() => (
                     <div >
+                        {showBookDetails ? <BookDetails toggleBookDetails={this.toggleBookDetails} /> : null}
                         <Header/>
                         <div>
                             <BookShelf
                                 booksOnShelf={books}
                                 onMoveBook={this.moveBook}
+                                toggleBookDetails={this.toggleBookDetails}
                             />
                         </div>
                         <Link to="/search" className="open-search">ADD BOOKS</Link>

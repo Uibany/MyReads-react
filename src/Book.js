@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
+import { Route, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class Book extends Component {
     static propTypes = {
         book: PropTypes.object.isRequired,
         onMoveBook: PropTypes.func.isRequired
-      }
+    }
 
     updateBook(shelf) {
         this.props.onMoveBook(this.props.book, shelf)
     }
-    
-    
+
     render() {
-        const { key, book, onMoveBook } = this.props;
+        const { key, book, onMoveBook, toggleBookDetails } = this.props;
         return (
-            <li key = {key}>
+            <li key={key}>
                 <div className="book card">
-                    <div className="book-top"> 
-                        <img className="book-cover" src = {book.imageLinks && book.imageLinks.thumbnail}/>    
+                    <div className="book-top">
+                        <img className="book-cover" src={book.imageLinks && book.imageLinks.thumbnail} />
                     </div>
                     <div className="book-title">{book.title}</div>
                     <div className="book-authors">{book.authors && book.authors.join(', ')}</div>
@@ -32,8 +32,10 @@ class Book extends Component {
                             <option value="none">Remove from shelf</option>
                         </select>
                     </div>
+                    <div className="book-shelf-changer book-details" onClick={toggleBookDetails}>
+                        <p>Details</p>
+                    </div>
                 </div>
-                
             </li>
         )
     }

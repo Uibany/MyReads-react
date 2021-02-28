@@ -185,7 +185,7 @@ button:active {
   align-self: center;
   justify-content: center;
   position: absolute;
-  top: 90px;
+  top: 80px;
   width: 90px;
   height: 30px;
   background: black;
@@ -193,6 +193,11 @@ button:active {
   display: none;
   transition-duration: 0.4s;
 }
+
+.book-details {
+    top: 120px; 
+}
+
 .book-shelf-changer p {
   padding: 5px;
   font-size: 15px;
@@ -202,6 +207,10 @@ button:active {
 
 .book-shelf-changer:hover{
   background: rgb(202, 155, 52);
+}
+
+.book-details:hover{
+  cursor:pointer;
 }
 
 .book:hover .book-shelf-changer{
@@ -329,4 +338,39 @@ button:active {
 
 .search-term:hover{
   cursor: pointer;
+}
+
+
+
+/* Book Details */
+
+.book-detail-window {
+    position: fixed;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+  
+.book-detail-content {
+    background-color: white;
+    position: absolute;
+    top: 10%;
+    left:10%;
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.close {
+    color: Black;
+    float: right;
+    font-size: 30px;
+}
+
+.close:hover {
+    color: rgb(202, 155, 52);
+    cursor: pointer;
 }
