@@ -11,7 +11,8 @@ class BooksApp extends Component {
     state = {
         books: [],
         searchResult : [],
-        showBookDetails : false
+        showBookDetails : false,
+        currentBook: null
     }
 
     moveBook = (book, shelf) => {
@@ -32,6 +33,12 @@ class BooksApp extends Component {
         console.log(this.state.showBookDetails);
     }
 
+    setCurrentBook = (book) =>{
+        this.setState({
+            currentBook: book
+        })
+    }
+
     componentDidMount() {
         BooksAPI.getAll().then((books) => {
             this.setState({ books: books, searchResult: books, showBookDetails : false })
@@ -39,7 +46,7 @@ class BooksApp extends Component {
     }
 
     render() {
-        const { books, searchResult, showBookDetails } = this.state;
+        const { books, searchResult, showBookDetails, currentBook } = this.state;
 
         return (
             <HashRouter basename={process.env.PUBLIC_URL}>
@@ -51,13 +58,14 @@ class BooksApp extends Component {
                 )} />
                 <Route exact path='/' render={() => (
                     <div >
-                        {showBookDetails ? <BookDetails toggleBookDetails={this.toggleBookDetails} /> : null}
+                        {showBookDetails ? <BookDetails toggleBookDetails={this.toggleBookDetails} currentBook = {currentBook}/> : null}
                         <Header/>
                         <div>
                             <BookShelf
                                 booksOnShelf={books}
                                 onMoveBook={this.moveBook}
                                 toggleBookDetails={this.toggleBookDetails}
+                                setCurrentBook={this.setCurrentBook}
                             />
                         </div>
                         <Link to="/search" className="open-search">ADD BOOKS</Link>

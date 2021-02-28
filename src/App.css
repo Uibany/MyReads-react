@@ -353,7 +353,7 @@ button:active {
     background-color: rgba(0, 0, 0, 0.35);
   }
   
-.book-detail-content {
+.book-detail-popup {
     background-color: white;
     position: absolute;
     top: 10%;
@@ -362,6 +362,7 @@ button:active {
     height: 80%;
     padding: 20px;
     border-radius: 5px;
+    overflow-y: auto;
 }
 
 .close {
@@ -373,4 +374,30 @@ button:active {
 .close:hover {
     color: rgb(202, 155, 52);
     cursor: pointer;
+}
+
+.book-detail-content{
+    margin: 2% 25% 2% 2%;
+}
+
+.book-detail-content h4{
+    color:#999;
+    font-size: 1.5em;
+}
+
+.book-detail-cover{
+    float: right;
+    padding: 20px;
+    margin-right: 10px;
+    width: 20%;
+    min-width: 200px;
+}
+
+@media only screen and (max-width: 1026px) {
+    .book-detail-cover {
+        display: none;
+    }
+    .book-detail-content{
+        margin: 2%;
+    }
 }

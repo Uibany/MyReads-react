@@ -8,15 +8,19 @@ class BookDetails extends Component {
   };
 
   render() {
+      const { currentBook } = this.props;
     return (
       <div className="book-detail-window">
-        <div className="book-detail-content">
-          <span className="close" onClick={this.handleClick}>
-            &times;
-          </span>
-
-            <h3>Book details!</h3>
-
+        <div className="book-detail-popup">
+            <span className="close" onClick={this.handleClick}>&times;</span>
+            <img className="book-detail-cover" src={currentBook.imageLinks && currentBook.imageLinks.thumbnail} />
+            <div className="book-detail-content">
+                <h2>{currentBook.title}</h2>
+                <h4>{currentBook.subtitle}</h4>
+                <h5>{currentBook.authors && currentBook.authors.join(', ')}</h5>
+                <div><b>Publisher:</b> {currentBook.publisher}&nbsp;&nbsp;<b>Date: </b>{currentBook.publishedDate}</div><br/>
+                <p>{currentBook.description}</p>
+            </div>
         </div>
       </div>
     )

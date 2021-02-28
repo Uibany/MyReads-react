@@ -13,7 +13,7 @@ class Book extends Component {
     }
 
     render() {
-        const { key, book, onMoveBook, toggleBookDetails } = this.props;
+        const { key, book, onMoveBook, toggleBookDetails,setCurrentBook } = this.props;
         return (
             <li key={key}>
                 <div className="book card">
@@ -32,7 +32,7 @@ class Book extends Component {
                             <option value="none">Remove from shelf</option>
                         </select>
                     </div>
-                    <div className="book-shelf-changer book-details" onClick={toggleBookDetails}>
+                    <div className="book-shelf-changer book-details" onClick={()=>{toggleBookDetails(); setCurrentBook(book);}}>
                         <p>Details</p>
                     </div>
                 </div>
