@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/static/media/background.f89ff9d7.jpeg"
   },
   {
-    "revision": "bb9363b86b02777d23523851826414e0",
-    "url": "/static/media/add.bb9363b8.svg"
-  },
-  {
     "revision": "3687aa988bec28f17ae39153db1646c3",
     "url": "/static/media/arrow-back.3687aa98.svg"
+  },
+  {
+    "revision": "bb9363b86b02777d23523851826414e0",
+    "url": "/static/media/add.bb9363b8.svg"
   },
   {
     "revision": "09e5b26f251bb243ba81309ea6ed7c13",
