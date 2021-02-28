@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import SingleSearchTerm from './SingleSearchTerm';
 
 const allSearchTerms = [
     'Android', 'Art', 'Artificial Intelligence', 'Astronomy', 'Austen', 
@@ -14,11 +15,14 @@ const allSearchTerms = [
      'Tale', 'Thrun', 'Time', 'Tolstoy', 'Travel', 'Ultimate', 'Virtual Reality', 'Web Development', 'iOS'
 ]
 
+const styleActive = {color: "white", backgroundColor: "#ca9b34"};
+const styleInactive = {backgroundColor: "white", color: "#ca9b34"};
+
 class SearchTerms extends Component{
     state = {
         showSearchTerms: -1,
         searchTerms:[],
-        activeTermIndex: 0,
+        activeTerm: null,
         toggleButtonText: "Show suggested search terms",
         toggleButtonStyle: {color: "white", backgroundColor: "#ca9b34"}
     }
@@ -38,20 +42,30 @@ class SearchTerms extends Component{
                 toggleButtonStyle: {color: "white", backgroundColor: "#ca9b34"}
             });
     }
+
+    setActiveTerm = (term) => {
+        this.setState({
+            activeTerm: term
+        })
+    }
         
     
     render(){
-        const{showSearchTerms, searchTerms, activeTermIndex, toggleButtonText, toggleButtonStyle} = this.state;
+        const{ searchTerms, activeTerm, toggleButtonText, toggleButtonStyle} = this.state;
+        const{ setQuery } = this.props; 
+
         return (
             <div className = "search-terms-collection">
-                <button className= "search-terms-toggle" onClick={this.toggleSearchTerms} style={toggleButtonStyle}>
+                <button className= "search-terms-toggle" onClick= {this.toggleSearchTerms} style={toggleButtonStyle}>
                     {toggleButtonText}
                 </button>
 
                 <li className = "search-terms-list">
                     {searchTerms.map(term=>{
                         return(
-                            <ol className = "search-term" >{term}</ol>
+                            activeTerm === term?
+                            <SingleSearchTerm searchTerm = {term} setQuery = {setQuery} setActiveTerm = {this.setActiveTerm} termStyle = {styleActive}/>
+                            :<SingleSearchTerm searchTerm = {term} setQuery = {setQuery} setActiveTerm = {this.setActiveTerm} termStyle = {styleInactive}/>
                         )
                     })}
                 </li>

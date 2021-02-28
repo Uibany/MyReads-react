@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import {HashRouter, Route, Link } from 'react-router-dom';
 import * as BooksAPI from './BooksAPI';
 import BookShelf from './BookShelf';
 import Header from './Header';
 import Search from './Search';
+import BookDetails from './BookDetails';
 import './App.css'
 
 class BooksApp extends Component {
     state = {
         books: [],
-        searchResult : []
+        searchResult : [],
+        showBookDetails : false,
+        currentBook: null
     }
 
     moveBook = (book, shelf) => {
@@ -23,35 +26,53 @@ class BooksApp extends Component {
         }
     }
 
+    toggleBookDetails = () => {
+        this.setState({
+          showBookDetails: !this.state.showBookDetails
+        })
+        console.log(this.state.showBookDetails);
+    }
+
+    setCurrentBook = (book) =>{
+        this.setState({
+            currentBook: book
+        })
+    }
+
     componentDidMount() {
         BooksAPI.getAll().then((books) => {
-            this.setState({ books: books, searchResult: books })
+            this.setState({ books: books, searchResult: books, showBookDetails : false })
         })
     }
 
     render() {
-        const { books, searchResult } = this.state;
+        const { books, searchResult, showBookDetails, currentBook } = this.state;
 
         return (
+            <HashRouter basename={process.env.PUBLIC_URL}>
             <div className="app">
                 <Route exact path='/search' render={() => (
                     <Search 
                         allBooks = {searchResult}
-                        onMoveBook={this.moveBook}/>
+                        onMoveBook = {this.moveBook}/>
                 )} />
                 <Route exact path='/' render={() => (
                     <div >
+                        {showBookDetails ? <BookDetails toggleBookDetails={this.toggleBookDetails} currentBook = {currentBook}/> : null}
                         <Header/>
                         <div>
                             <BookShelf
                                 booksOnShelf={books}
                                 onMoveBook={this.moveBook}
+                                toggleBookDetails={this.toggleBookDetails}
+                                setCurrentBook={this.setCurrentBook}
                             />
                         </div>
                         <Link to="/search" className="open-search">ADD BOOKS</Link>
                     </div>
                 )} />
             </div>
+            </HashRouter>
         )
     }
 }

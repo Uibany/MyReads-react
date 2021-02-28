@@ -7,6 +7,11 @@ import SearchTerms from './SearchTerms';
 import * as BooksAPI from './BooksAPI';
 
 class Search extends Component { 
+    constructor(props){
+        super(props);
+        // this.setQuery = this.setQuery.bind(this);
+    }
+
     state = {
         query: '',
         searchResult:[]
@@ -30,6 +35,13 @@ class Search extends Component {
         }
     }
 
+    setQuery = (searchTerm)=>{
+        this.setState({
+            query: searchTerm
+        });
+        this.search(searchTerm);
+    }
+
 
     componentDidMount() {
         BooksAPI.getAll().then((books) => {
@@ -39,7 +51,7 @@ class Search extends Component {
 
     render() {
         const { allBooks, onMoveBook } = this.props;
-        const { query, searchResult} = this.state;
+        const { query, searchResult } = this.state;
 
 
         return (
@@ -58,7 +70,7 @@ class Search extends Component {
                     </div>
                 </div>
 
-                <SearchTerms/>
+                <SearchTerms setQuery = {this.setQuery}/>
                 
                 <div className="search-books-results">
                     <ol className="books-grid">

@@ -185,7 +185,7 @@ button:active {
   align-self: center;
   justify-content: center;
   position: absolute;
-  top: 90px;
+  top: 80px;
   width: 90px;
   height: 30px;
   background: black;
@@ -193,6 +193,11 @@ button:active {
   display: none;
   transition-duration: 0.4s;
 }
+
+.book-details {
+    top: 120px; 
+}
+
 .book-shelf-changer p {
   padding: 5px;
   font-size: 15px;
@@ -202,6 +207,10 @@ button:active {
 
 .book-shelf-changer:hover{
   background: rgb(202, 155, 52);
+}
+
+.book-details:hover{
+  cursor:pointer;
 }
 
 .book:hover .book-shelf-changer{
@@ -324,4 +333,71 @@ button:active {
   padding: 4px 8px;
   margin: 10px;
   border-radius: 4px;
+  transition-duration: 0.4s;
+}
+
+.search-term:hover{
+  cursor: pointer;
+}
+
+
+
+/* Book Details */
+
+.book-detail-window {
+    position: fixed;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+  }
+  
+.book-detail-popup {
+    background-color: white;
+    position: absolute;
+    top: 10%;
+    left:10%;
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+.close {
+    color: Black;
+    float: right;
+    font-size: 30px;
+}
+
+.close:hover {
+    color: rgb(202, 155, 52);
+    cursor: pointer;
+}
+
+.book-detail-content{
+    margin: 2% 25% 2% 2%;
+}
+
+.book-detail-content h4{
+    color:#999;
+    font-size: 1.5em;
+}
+
+.book-detail-cover{
+    float: right;
+    padding: 20px;
+    margin-right: 10px;
+    width: 20%;
+    min-width: 200px;
+}
+
+@media only screen and (max-width: 1026px) {
+    .book-detail-cover {
+        display: none;
+    }
+    .book-detail-content{
+        margin: 2%;
+    }
 }
