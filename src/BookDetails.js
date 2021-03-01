@@ -20,6 +20,7 @@ class BookDetails extends Component {
                 <h5>{currentBook.authors && currentBook.authors.join(', ')}</h5>
                 <div><b>Publisher:</b> {currentBook.publisher}&nbsp;&nbsp;<b>Date: </b>{currentBook.publishedDate}</div><br/>
                 <p>{currentBook.description}</p>
+                <button name="preview-link" className="book-detail-link" href={currentBook.previewLink} role="button">View eBook</button>
             </div>
         </div>
       </div>

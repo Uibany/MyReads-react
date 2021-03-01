@@ -13,7 +13,7 @@ class Book extends Component {
     }
 
     render() {
-        const { key, book, onMoveBook, toggleBookDetails,setCurrentBook } = this.props;
+        const { key, book, onMoveBook, toggleBookDetails, setCurrentBook } = this.props;
         return (
             <li key={key}>
                 <div className="book card">

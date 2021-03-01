@@ -54,7 +54,9 @@ class BooksApp extends Component {
                 <Route exact path='/search' render={() => (
                     <Search 
                         allBooks = {searchResult}
-                        onMoveBook = {this.moveBook}/>
+                        onMoveBook = {this.moveBook}
+                        toggleBookDetails={this.toggleBookDetails}
+                        setCurrentBook={this.setCurrentBook}/>
                 )} />
                 <Route exact path='/' render={() => (
                     <div >
