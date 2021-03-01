@@ -1,6 +1,7 @@
 # MyReads
 [Live Demo](https://uibany.github.io/myreads-app/)
-This is the final assessment project for Udacity's React Fundamentals course. 
+
+A virtual bookcase web application built with React. Users can search for books with suggested keywords, add books to bookshelves, shift books from one shelf to another and view book details.
 
 ## Project Setup
 
