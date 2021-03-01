@@ -19,8 +19,12 @@ const styleActive = {color: "white", backgroundColor: "#ca9b34"};
 const styleInactive = {backgroundColor: "white", color: "#ca9b34"};
 
 class SearchTerms extends Component{
+    static propTypes = {
+        setQuery: PropTypes.func.isRequired
+    } 
+
     state = {
-        showSearchTerms: -1,
+        showSearchTerms: false,
         searchTerms:[],
         activeTerm: null,
         toggleButtonText: "Show suggested search terms",
@@ -28,9 +32,11 @@ class SearchTerms extends Component{
     }
 
     toggleSearchTerms = () =>{
-        this.state.showSearchTerms *= (-1);
+        this.setState({
+            showSearchTerms: !this.state.showSearchTerms
+        })
         console.log(this.state.showSearchTerms);
-        this.state.showSearchTerms == 1? 
+        this.state.showSearchTerms === false? 
             this.setState({
                 searchTerms:allSearchTerms,
                 toggleButtonText: "Hide suggested search terms", 

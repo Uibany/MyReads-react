@@ -410,6 +410,7 @@ button:active {
 .book-detail-link:hover{
     background:rgb(202, 155, 52);
     color: white;
+    text-decoration: none;
 }
 
 @media only screen and (max-width: 1026px) {

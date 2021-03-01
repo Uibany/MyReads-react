@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Book from './Book';
 import SearchTerms from './SearchTerms';
 import BookDetails from './BookDetails';
 import * as BooksAPI from './BooksAPI';
 
-class Search extends Component { 
+class Search extends Component {
+    static propTypes = {
+        onMoveBook: PropTypes.func.isRequired
+    } 
 
     state = {
         query: '',
@@ -22,7 +25,7 @@ class Search extends Component {
     }
 
     search = (query) =>{
-        if(query!=''){
+        if(query!==''){
             BooksAPI.search(query).then(books=>{
                 if(books.error){
                     this.setState({ searchResult: [] })
@@ -60,7 +63,7 @@ class Search extends Component {
     }
 
     render() {
-        const { allBooks, onMoveBook} = this.props;
+        const { onMoveBook } = this.props;
         const { query, searchResult, showBookDetails, currentBook } = this.state;
 
         return (

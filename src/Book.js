@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class Book extends Component {
     static propTypes = {
         book: PropTypes.object.isRequired,
-        onMoveBook: PropTypes.func.isRequired
+        onMoveBook: PropTypes.func.isRequired,
+        toggleBookDetails: PropTypes.func.isRequired,
+        setCurrentBook: PropTypes.func.isRequired
     }
 
     updateBook(shelf) {
@@ -13,12 +14,12 @@ class Book extends Component {
     }
 
     render() {
-        const { key, book, onMoveBook, toggleBookDetails, setCurrentBook } = this.props;
+        const { key, book, toggleBookDetails, setCurrentBook } = this.props;
         return (
             <li key={key}>
                 <div className="book card">
                     <div className="book-top">
-                        <img className="book-cover" src={book.imageLinks && book.imageLinks.thumbnail} />
+                        <img className="book-cover" src={book.imageLinks && book.imageLinks.thumbnail} alt="book cover" />
                     </div>
                     <div className="book-title">{book.title}</div>
                     <div className="book-authors">{book.authors && book.authors.join(', ')}</div>
