@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Link } from 'react-router-dom';
-import background from './pictures/background.jpeg';
 import Book from './Book';
 import SearchTerms from './SearchTerms';
+import BookDetails from './BookDetails';
 import * as BooksAPI from './BooksAPI';
 
 class Search extends Component { 
-    constructor(props){
-        super(props);
-        // this.setQuery = this.setQuery.bind(this);
-    }
 
     state = {
         query: '',
-        searchResult:[]
+        searchResult:[],
+        showBookDetails : false,
+        currentBook: null
       }
 
     updateQuery = (query) => {
@@ -42,6 +40,18 @@ class Search extends Component {
         this.search(searchTerm);
     }
 
+    toggleBookDetails = () => {
+        this.setState({
+          showBookDetails: !this.state.showBookDetails
+        })
+
+    }
+
+    setCurrentBook = (book) =>{
+        this.setState({
+            currentBook: book
+        })
+    }
 
     componentDidMount() {
         BooksAPI.getAll().then((books) => {
@@ -50,12 +60,12 @@ class Search extends Component {
     }
 
     render() {
-        const { allBooks, onMoveBook } = this.props;
-        const { query, searchResult } = this.state;
-
+        const { allBooks, onMoveBook} = this.props;
+        const { query, searchResult, showBookDetails, currentBook } = this.state;
 
         return (
             <div className="search-books">
+                {showBookDetails ? <BookDetails toggleBookDetails={this.toggleBookDetails} currentBook = {currentBook}/> : null}
                 <div className="search-books-bar">
                     <Link to="/" className="close-search">Close</Link>
                     <div className="search-books-input-wrapper">
@@ -79,6 +89,8 @@ class Search extends Component {
                                 key={book.id}
                                 book={book}
                                 onMoveBook = {onMoveBook}
+                                toggleBookDetails={this.toggleBookDetails}
+                                setCurrentBook={this.setCurrentBook}
                             />
                         ))}
                     </ol>

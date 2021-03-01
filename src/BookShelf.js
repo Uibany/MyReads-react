@@ -10,7 +10,7 @@ class BookShelf extends Component {
     }
 
     render() {
-        const { booksOnShelf, onMoveBook,toggleBookDetails,setCurrentBook } = this.props;
+        const { booksOnShelf, onMoveBook, toggleBookDetails, setCurrentBook } = this.props;
 
         const shelfValues = ["currentlyReading", "wantToRead", "read"];
         const shelfNames = ["I'm currently reading...", "I want to read...", "I have read..."];
@@ -31,7 +31,7 @@ class BookShelf extends Component {
                                                 book = {book}
                                                 onMoveBook = {onMoveBook}
                                                 toggleBookDetails = {toggleBookDetails}
-                                                setCurrentBook={setCurrentBook}
+                                                setCurrentBook = {setCurrentBook}
                                             />
                                         ))}
                                     </ol>
@@ -43,7 +43,6 @@ class BookShelf extends Component {
             </div>
         )
     }
-
 }
 
 export default BookShelf;
